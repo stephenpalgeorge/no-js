@@ -4,7 +4,8 @@
   "description": "html and css components",
   "main": "index.js",
   "scripts": {
-    "start": "rm -rf dist && gulp && npx live-server dist"
+    "start": "rm -rf dist && gulp && npx live-server dist",
+    "dev": "gulp dev & npx live-server dist"
   },
   "repository": {
     "type": "git",
