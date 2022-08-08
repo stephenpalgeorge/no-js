@@ -1,0 +1,52 @@
+{% set PAGE_TITLE = "Home" %}
+
+{% extends 'main.njk' %}
+    {% block main %}
+    <main>
+        <h1>No JS</h1>
+        <h2>Building the web with as little JavaScript as possible</h2>
+        <section>
+            <p>
+                The <mark>No.js</mark> philosophy is to leverage the full power of HTML and CSS
+                and build as much of the modern web as possible without using JS. This is as much
+                out of curiosity as it is out of any philosophical convictions.
+            </p>
+            <p>
+                Browse the examples below my clicking on their name. You can also jump directly to
+                the code by clicking the <code>&lt;/&gt;</code> icon. If you've got any ideas for new
+                components, or suggestions for the current implementations,
+                <a href="https://github.com/stephenpalgeorge/no-js">please make a PR</a>.
+            </p>
+        </section>
+
+        <section>
+            <h3>Caveats/Disclaimers</h3>
+            <ul>
+                <li>
+                    <p class="lead">Please know, I am a passionate front-end developer by day and love JS.</p>
+                    <p>
+                        I'm not really campaigning to abandon JavaScript, I'm just saying that it's interesting
+                        to experiment with how much interactivity you can conjure up without it.
+                    </p>
+                </li>
+                <li>
+                    <p class="lead">"No.js" really is only referring to the final code that is rendered in the browser.</p>
+                    <p>
+                        I'm fully aware that, in the source code, I'm using tools like Nunjucks - although this is, of
+                        course, optional. I also show these components implemented in popular JS frameworks
+                        (principally <a href="https://svelte.dev/">Svelte</a>), but again it's really the <em>output code</em>
+                        that I'm interested in - how much JS is being shipped to the browser?
+                    </p>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <nav>
+                <ul>
+
+                </ul>
+            </nav>
+        </section>
+    </main>
+    {% endblock %}

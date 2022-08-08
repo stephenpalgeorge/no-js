@@ -1,0 +1,32 @@
+{
+  "name": "no-js",
+  "version": "0.0.1",
+  "description": "html and css components",
+  "main": "index.js",
+  "scripts": {
+    "start": "rm -rf dist && gulp && npx live-server dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stephenpalgeorge/no-js.git"
+  },
+  "keywords": [
+    "css",
+    "sass",
+    "html",
+    "nunjucks",
+    "components"
+  ],
+  "author": "stephen pal-george",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stephenpalgeorge/no-js/issues"
+  },
+  "homepage": "https://github.com/stephenpalgeorge/no-js#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-nunjucks-render": "^2.2.3",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.54.3"
+  }
+}
