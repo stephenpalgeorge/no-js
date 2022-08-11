@@ -6,6 +6,88 @@
   box-sizing: border-box;
 }
 
+::selection {
+  background-color: var.$clr--australium-gold\fade;
+}
+
+body {
+  background-color: var.$clr--ghost-white;
+}
+
+main {
+  width: min(100%, 45rem);
+  margin-inline: auto;
+  padding-block: var.$size-900;
+}
+
+section {
+  + & {
+    margin-top: var.$size-900;
+  }
+}
+
+h1, h2, h3,
+h4, h5, h6 {
+  font-family: var.$font--sans-serif;
+  font-weight: 900;
+  color: var.$clr--black-out;
+}
+
 h1 {
-  color: var.$clr--main;
+  font-size: var.$size-700;
+  color: var.$clr--love-letter;
+  text-shadow:
+    .25rem .25rem 0 var.$clr--ghost-white,
+    -.25rem -.25rem 0 var.$clr--ghost-white,
+    .5rem .5rem 0 var.$clr--aero\fade,
+    -.5rem -.5rem 0 var.$clr--love-letter\fade;
+  &.large-title {
+    font-size: var.$size-900;
+  }
+
+  + * {
+    margin-top: var.$size-700;
+  }
+}
+
+h2 {
+  font-size: var.$size-600;
+  max-width: 40ch;
+  + * {
+    margin-top: var.$size-500;
+  }
+}
+
+p, a {
+  color: var.$clr--black-out;
+  font-family: var.$font--monospace;
+  line-height: 1.7;
+  max-width: 65ch;
+}
+
+p {
+  &.lead {
+    font-style: italic;
+  }
+
+  + * {
+    margin-top: var.$size-500;
+  }
+}
+
+a {
+   color: var.$clr--love-letter;
+}
+
+ul {
+  list-style-type: none;
+
+  &.block-list {
+    li {
+      padding-block: var.$size-600;
+      &:first-child {
+        padding-top: 0;
+      }
+    }
+  }
 }

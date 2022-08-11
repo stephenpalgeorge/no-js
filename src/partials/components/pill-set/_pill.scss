@@ -1,0 +1,40 @@
+@use '../../../styles/variables' as var;
+
+.pill {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: max-content;
+  padding: var.$size-200 var.$size-400;
+  border: .125rem solid var.$clr--love-letter;
+  box-shadow: -.25rem -.25rem 0 0 #fff, .25rem .25rem 0 0 #fff, -.5rem -.5rem 0 0 var.$clr--love-letter\fade;
+  transition: border-color .25s ease-out, box-shadow .25s ease-out;
+
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: color .25s ease-out, border-color .25s ease-out;
+    cursor: pointer;
+
+    &.pill-code {
+      margin-left: var.$size-400;
+      padding-left: var.$size-400;
+      border-left: .125rem solid var.$clr--love-letter\fade;
+    }
+  }
+
+  &:hover {
+    background-color: var.$clr--love-letter;
+    border-color: var.$clr--love-letter\dark;
+    box-shadow: -.25rem -.25rem 0 0 #fff, .25rem .25rem 0 0 #fff, .5rem .5rem 0 0 var.$clr--aero\fade;
+
+    a {
+      color: #fff;
+      &.pill-code {
+        border-color: var.$clr--love-letter\dark;
+      }
+    }
+  }
+}

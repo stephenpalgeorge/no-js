@@ -1,0 +1,12 @@
+@use './pill';
+
+.pill-set {
+  $gap: .75rem;
+
+  display: flex;
+  margin-inline: $gap * -1;
+
+  > .pill {
+    margin-inline: $gap;
+  }
+}

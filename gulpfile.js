@@ -5,7 +5,7 @@ const sass = require('gulp-sass')(require('sass'));
 gulp.task("markup", () => {
     return gulp
         .src('src/pages/*')
-        .pipe(njk({ path: ['src/templates/'] }))
+        .pipe(njk({ path: ['src/templates/', 'src/partials/'] }))
         .pipe(gulp.dest('dist'));
 });
 

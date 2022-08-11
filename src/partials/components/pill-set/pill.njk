@@ -1,0 +1,11 @@
+{% macro render(name, url, remote) %}
+<div class="pill">
+    <a href="{{url}}" class="pill-name">
+        {{ name }}
+    </a>
+
+    <a href="{{remote}}" class="pill-code" target="_blank" rel="nofollow noopener noreferrer">
+        {% include 'icons/code-icon.njk' %}
+    </a>
+</div>
+{% endmacro %}
