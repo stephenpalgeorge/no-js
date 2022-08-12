@@ -4,7 +4,7 @@ const sass = require('gulp-sass')(require('sass'));
 
 gulp.task("markup", () => {
     return gulp
-        .src('src/pages/*')
+        .src('src/pages/**/*')
         .pipe(njk({ path: ['src/templates/', 'src/partials/'] }))
         .pipe(gulp.dest('dist'));
 });
@@ -19,4 +19,5 @@ gulp.task("styles", () => {
 gulp.task("dev", () => {
     gulp.watch('src/**/*', gulp.series(["markup", "styles"]));
 });
+
 gulp.task("default", gulp.series(["markup", "styles"]));

@@ -43,6 +43,9 @@ h1 {
     -.5rem -.5rem 0 var.$clr--love-letter\fade;
   &.large-title {
     font-size: var.$size-900;
+    + * {
+      margin-top: var.$size-900;
+    }
   }
 
   + * {
@@ -51,8 +54,10 @@ h1 {
 }
 
 h2 {
-  font-size: var.$size-600;
-  max-width: 40ch;
+  font-size: var.$size-500;
+  text-transform: uppercase;
+  max-width: 45ch;
+  line-height: 1.4;
   + * {
     margin-top: var.$size-500;
   }

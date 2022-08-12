@@ -4,9 +4,11 @@
   $gap: .75rem;
 
   display: flex;
-  margin-inline: $gap * -1;
+  flex-flow: row wrap;
+
+  margin: $gap * -1;
 
   > .pill {
-    margin-inline: $gap;
+    margin: $gap;
   }
 }

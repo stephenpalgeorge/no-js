@@ -8,15 +8,23 @@
   width: max-content;
   padding: var.$size-200 var.$size-400;
   border: .125rem solid var.$clr--love-letter;
-  box-shadow: -.25rem -.25rem 0 0 #fff, .25rem .25rem 0 0 #fff, -.5rem -.5rem 0 0 var.$clr--love-letter\fade;
-  transition: border-color .25s ease-out, box-shadow .25s ease-out;
+  box-shadow:
+    -.25rem -.25rem 0 0 var.$clr--ghost-white,
+    .25rem .25rem 0 0 var.$clr--ghost-white,
+    -.5rem -.5rem 0 0 var.$clr--love-letter\fade;
+  transition:
+    border-color var.$duration\base var.$timing-function,
+    box-shadow var.$duration\base var.$timing-function,
+    background var.$duration\base var.$timing-function;
 
   a {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: color .25s ease-out, border-color .25s ease-out;
     cursor: pointer;
+    transition:
+      color var.$duration\base var.$timing-function,
+      border-color var.$duration\base var.$timing-function;
 
     &.pill-code {
       margin-left: var.$size-400;
@@ -26,9 +34,12 @@
   }
 
   &:hover {
-    background-color: var.$clr--love-letter;
+    background: linear-gradient(to bottom, lighten(var.$clr--love-letter, 3%), var.$clr--love-letter);
     border-color: var.$clr--love-letter\dark;
-    box-shadow: -.25rem -.25rem 0 0 #fff, .25rem .25rem 0 0 #fff, .5rem .5rem 0 0 var.$clr--aero\fade;
+    box-shadow:
+      -.25rem -.25rem 0 0 var.$clr--ghost-white,
+      .25rem .25rem 0 0 var.$clr--ghost-white,
+      .5rem .5rem 0 0 var.$clr--aero\fade;
 
     a {
       color: #fff;

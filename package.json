@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "rm -rf dist && gulp && npx live-server dist",
-    "dev": "gulp dev & npx live-server dist"
+    "dev": "gulp dev & http-server dist"
   },
   "repository": {
     "type": "git",
@@ -28,6 +28,7 @@
     "gulp": "^4.0.2",
     "gulp-nunjucks-render": "^2.2.3",
     "gulp-sass": "^5.1.0",
+    "http-server": "^14.1.1",
     "sass": "^1.54.3"
   }
 }
