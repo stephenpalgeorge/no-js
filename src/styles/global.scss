@@ -40,7 +40,9 @@ h1 {
     .25rem .25rem 0 var.$clr--ghost-white,
     -.25rem -.25rem 0 var.$clr--ghost-white,
     .5rem .5rem 0 var.$clr--aero\fade,
-    -.5rem -.5rem 0 var.$clr--love-letter\fade;
+    -.5rem -.5rem 0 var.$clr--love-letter\fade,
+    1rem 1rem 1.75rem rgba(var.$clr--love-letter, .4),
+    -1rem -1rem 1.75rem rgba(var.$clr--aero, .4);
   &.large-title {
     font-size: var.$size-900;
     + * {
@@ -94,5 +96,14 @@ ul {
         padding-top: 0;
       }
     }
+  }
+}
+
+section.dark-theme {
+  padding: var.$size-600;
+  background-color: var.$clr--black-out;
+  color: var.$clr--ghost-white;
+  * {
+    color: currentColor;
   }
 }

@@ -1,0 +1,12 @@
+{% extends "main.njk" %}
+    {% set USE_DEMO = true %}
+    {% block templateStyles %}
+    <link rel="stylesheet" href="/styles/component-demo.css">
+    {% endblock %}
+
+    {% block main %}
+    <h1>{{ COMPONENT_NAME }}</h1>
+    {{ COMPONENT_DESCRIPTION | safe }}
+    <a href="{{CODE_LINK}}" id="code-link">See the code</a>
+    <a href="{{BLOG_LINK}}" id="blog-link">Read the article</a>
+    {% endblock %}

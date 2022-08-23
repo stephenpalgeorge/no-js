@@ -4,8 +4,8 @@
   "description": "html and css components",
   "main": "index.js",
   "scripts": {
-    "start": "rm -rf dist && gulp && npx live-server dist",
-    "dev": "gulp dev & http-server dist"
+    "start": "rm -rf dist && gulp && http-server dist",
+    "dev": "gulp dev & http-server dist -c-1"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,7 @@
   "homepage": "https://github.com/stephenpalgeorge/no-js#readme",
   "devDependencies": {
     "gulp": "^4.0.2",
+    "gulp-data": "^1.3.1",
     "gulp-nunjucks-render": "^2.2.3",
     "gulp-sass": "^5.1.0",
     "http-server": "^14.1.1",

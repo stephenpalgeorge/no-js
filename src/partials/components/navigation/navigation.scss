@@ -1,0 +1,134 @@
+@use '../../../styles/variables' as var;
+
+nav.demo-nav {
+  // define some local state variables:
+  $border-rad: .25rem;
+
+  // using CSS vars means we can style the thing once, and then
+  // just update the variables when we want it to change, rather than
+  // re-declaring the same properties.
+  // These values represent the 'hidden' menu.
+  --menu-top: #{var.$size-900 + 2rem};
+  --menu-vis: 0;
+  --pointer: none;
+
+  // NAV BAR STYLES
+  // ----------
+  position: relative;
+  width: 100%;
+  padding: var.$size-400 var.$size-600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var.$clr--black-out;
+  border-radius: $border-rad;
+
+  // SITE NAME LINK
+  // ----------
+  > a {
+    font-weight: bold;
+    text-decoration: none;
+    &:focus {
+      outline: none;
+      background-color: rgba(var.$clr--love-letter, .25);
+    }
+  }
+
+  // Hide the checkbox, we'll just be interacting with its label:
+  > input[type="checkbox"] { display: none; }
+
+  // HAMBURGER ICON
+  // ----------
+  label {
+    // define the overall size of the icon
+    position: relative;
+    width: var.$size-600;
+    height: var.$size-600;
+    cursor: pointer;
+    // style the individual bars within the icon
+    > div {
+      // these styles get applied to both:
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: var.$size-100;
+      background-color: var.$clr--ghost-white;
+      border-radius: 999px;
+      transition: top .25s ease-out;
+
+      // then the stuff that's peculiar to one or the other,
+      // as there are only 2, we can just grab them with `first-child` and `last-child`.
+      &:first-child { top: 25%; }
+      &:last-child { top: 75%; }
+    }
+  }
+
+  // MENU LIST
+  // ----------
+  ul {
+    // initial variable values will be for when the menu is hidden,
+    // these are declared at the top of the file.
+    position: absolute;
+    top: var(--menu-top);
+    right: 0;
+    width: 50%;
+    opacity: var(--menu-vis);
+    background-color: #fff;
+    border-radius: $border-rad;
+    pointer-events: var(--pointer);
+    box-shadow: 0 .25rem .5rem .25rem rgba(var.$clr--black-out, .12);
+    transition: top .25s ease-out, opacity .25s ease-out .1s;
+
+    li {
+      display: flex;
+      align-items: stretch;
+
+      a {
+        padding-block: var.$size-200;
+        width: 100%;
+        text-align: center;
+        &:focus {
+          outline: none;
+          font-weight: bold;
+        }
+      }
+
+      // target the links within the first and last list items,
+      // just to give the menu a little more breathing space at the top
+      // and bottom, whilst keeping the whole area clickable.
+      &:first-child a { padding-top: var.$size-400; }
+      &:last-child a { padding-bottom: var.$size-400; }
+    }
+  }
+
+  // VISIBLE MENU
+  // clicking on the `label` will check the checkbox, meaning all of the
+  // below styles will take effect.
+  input:checked {
+    // target the divs that are within a label that immediately follows a checked checkbox:
+    + label > div {
+      // both get moved into the middle, to look like a 'minus' symbol.
+      top: 50%;
+    }
+
+    // update the menu variables so that it can be seen!
+    // we target a `ul` that is a sibling of a checked checkbox:
+    ~ ul {
+      --menu-top: #{var.$size-900};
+      --menu-vis: 1;
+      --pointer: auto;
+    }
+  }
+
+  // labels *aren't* keyboard navigable, meaning someone who wasn't using a mouse
+  // would never be able to "open" the menu. The below block solves that, we apply the
+  // "menu visible" styles to the `ul` when any of its children (the menu links) have focus.
+  // Therefore a user who is tabbing through the site would see the menu appear when they
+  // tab into it (and disappear when they leave).
+  ul:focus-within {
+    --menu-top: #{var.$size-900};
+    --menu-vis: 1;
+    --pointer: auto;
+  }
+}

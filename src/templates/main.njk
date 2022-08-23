@@ -5,12 +5,42 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta name="author" content="stephen pal-george">
+    <meta name="copyright" content="stephen pal-george">
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:creator" content="@stephenngeorge">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_GB">
+    <!--  subsequent metatags are set on the page-level, and their data is stored in `src/data.json`  -->
+    <meta property="og:title" content="{{ PAGE_TITLE }}">
+    <meta proprtey="twitter:title" content="{{ PAGE_TITLE }}">
+    {% if PAGE_DESCRIPTION %}
+        <meta name="description" content="{{ PAGE_DESCRIPTION }}">
+        <meta property="og:description" content="{{ PAGE_DESCRIPTION }}">
+        <meta property="twitter:description" content="{{ PAGE_DESCRIPTION }}">
+    {% endif %}
+    {% if PAGE_KEYWORDS %}
+        <meta name="keywords" content="{{ PAGE_KEYWORDS }}">
+    {% endif %}
+
     <link rel="stylesheet" href="/styles/global.css">
     <link rel="stylesheet" href="/styles/index.css">
+    {% block templateStyles %}{% endblock %}
+    {% block styles %}{% endblock %}
     <title>{{ PAGE_TITLE }} - No.js</title>
 </head>
 <body>
-    {% block main %}
-    {% endblock %}
+    {% include 'header.njk' %}
+    <main>
+        {% block main %}{% endblock %}
+        {% if USE_DEMO %}
+            <section class="component-demo">
+                {% block demo %}
+                {% endblock %}
+            </section>
+        {% endif %}
+    </main>
+    {% include 'footer.njk' %}
 </body>
 </html>

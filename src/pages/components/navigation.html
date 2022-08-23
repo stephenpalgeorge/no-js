@@ -1,10 +1,20 @@
-{% import "components/pill-set/pill-set.njk" as pillSet %}
-
 {% set PAGE_TITLE = "Navigation Component" %}
+{% set COMPONENT_NAME = global.components.navigation.name %}
+{% set COMPONENT_DESCRIPTION = global.components.navigation.description %}
 
-{% extends "main.njk" %}
-    {% block main %}
-    <main>
-        <h1>Navigation</h1>
-    </main>
+{% extends "component.njk" %}
+    {% block styles %}
+        <link rel="stylesheet" href="/styles/navigation/navigation.css">
+    {% endblock %}
+    {% block demo %}
+        {% include 'components/navigation/navigation.njk' %}
+        <h2>Lorem Ipsum</h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+            enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+            in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur.
+        </p>
     {% endblock %}

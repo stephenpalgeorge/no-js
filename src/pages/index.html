@@ -1,58 +1,54 @@
 {% import "components/pill-set/pill-set.njk" as pillSet %}
 
-{% set PAGE_TITLE = "Home" %}
-{% set components = [
-    { name: 'Navigation', url: '/components/navigation', remote: 'https://github.com/stephenpalgeorge/no-js' },
-    { name: 'Tabs', url: '/components/tabs', remote: 'https://github.com/stepenpalgeorge/no-js' },
-    { name: 'Accordion', url: '/components/accordion', remote: 'https://github.com/stephenpalgeorge/no-js' },
-    { name: 'Modal', url: '/components/modal', remote: 'https://github.com/stephenpalgeorge/no-js' },
-    { name: 'Lightbox', url: '/components/lightbox', remote: 'https://github.com/stephenpalgeorge/no-js' }
-] %}
+{% set PAGE_TITLE = pages.Index.title %}
+{% set PAGE_DESCRIPTION = pages.Index.description %}
+{% set PAGE_KEYWORDS = pages.Index.keywords %}
+
+{% set components = global.components %}
 
 {% extends "main.njk" %}
     {% block main %}
-    <main>
-        <h1 class="large-title">No.js</h1>
-        <section>
-            <h2>Building the web with as little JavaScript as possible</h2>
-            <p>
-                The No.js philosophy is to leverage the full power of HTML and CSS
-                and build as much of the modern web as possible without using JS. This is as much
-                out of curiosity as it is out of any philosophical convictions.
-            </p>
-            <p>
-                Browse the examples below my clicking on their name. You can also jump directly to
-                the code by clicking the <code>&lt;/&gt;</code> icon. If you've got any ideas for new
-                components, or suggestions for the current implementations please
-                <a href="https://github.com/stephenpalgeorge/no-js/pulls">make a PR</a> or
-                <a href="https://github.com/stephenpalgeorge/no-js/issues">create an issue</a>.
-            </p>
-        </section>
+    <h1 class="large-title">{{ pages.Index.title }}</h1>
+    <section>
+        <h2 class="subheading">{{ pages.Index.description }}</h2>
+        <p>
+            The No.js philosophy is to leverage the full power of HTML and CSS
+            and build as much of the modern web as possible without using JS. This is as much
+            out of curiosity as it is out of any philosophical convictions.
+        </p>
+        <p>
+            Browse the examples below my clicking on their name. You can also jump directly to
+            the code by clicking the <code>&lt;/&gt;</code> icon. If you've got any ideas for new
+            components, or suggestions for the current implementations please
+            <a href="https://github.com/stephenpalgeorge/no-js/pulls">make a PR</a> or
+            <a href="https://github.com/stephenpalgeorge/no-js/issues">create an issue</a>.
+        </p>
+    </section>
 
-        <section>
-            {{ pillSet.render(components) }}
-        </section>
+    <section>
+        {{ pillSet.render(components) }}
+    </section>
 
-        <section>
-            <h2>Caveats/Disclaimers</h2>
-            <ul class="block-list">
-                <li>
-                    <p class="lead">Please know, I am a passionate front-end developer by day and love JS.</p>
-                    <p>
-                        I'm not really campaigning to abandon JavaScript, I'm just saying that it's interesting
-                        to experiment with how much interactivity you can conjure up without it.
-                    </p>
-                </li>
-                <li>
-                    <p class="lead">"No.js" is really only referring to the final code that is rendered in the browser.</p>
-                    <p>
-                        I'm fully aware that, in the source code, I'm using tools like Nunjucks - although this is, of
-                        course, optional. I also show these components implemented in popular JS frameworks
-                        (principally <a href="https://svelte.dev/">Svelte</a>), but again it's really the <em>output code</em>
-                        that I'm interested in - how much JS is being shipped to the browser?
-                    </p>
-                </li>
-            </ul>
-        </section>
-    </main>
+    <section class="dark-theme">
+        <h2>Caveats/Disclaimers</h2>
+        <ul class="block-list">
+            <li>
+                <p class="lead">Please know, I am a passionate front-end developer by day and love JS.</p>
+                <p>
+                    I'm not really campaigning to abandon JavaScript, I'm just saying that it's interesting
+                    to experiment with how much interactivity you can conjure up without it.
+                </p>
+            </li>
+            <li>
+                <p class="lead">"No.js" is really only referring to the final code that is rendered in the browser.</p>
+                <p>
+                    I'm fully aware that, in the source code, I'm using tools like Nunjucks and gulp - although this is, of
+                    course, optional.
+<!--                    I also show these components implemented in popular JS frameworks-->
+<!--                    (principally <a href="https://svelte.dev/">Svelte</a>), but again it's really the <em>output code</em>-->
+<!--                    that I'm interested in - how much JS is being shipped to the browser?-->
+                </p>
+            </li>
+        </ul>
+    </section>
     {% endblock %}

@@ -2,8 +2,8 @@
 
 {% macro render(items) %}
 <section class="pill-set">
-    {% for item in items %}
-        {{ pill.render(item.name, item.url, item.remote) }}
+    {% for key, data in items %}
+        {{ pill.render(key, data.url, data.remote) }}
     {% endfor %}
 </section>
 {% endmacro %}
