@@ -2,11 +2,14 @@
     {% set USE_DEMO = true %}
     {% block templateStyles %}
     <link rel="stylesheet" href="/styles/component-demo.css">
+    <link rel="stylesheet" href="/styles/component-template.css">
     {% endblock %}
 
     {% block main %}
     <h1>{{ COMPONENT_NAME }}</h1>
     {{ COMPONENT_DESCRIPTION | safe }}
-    <a href="{{CODE_LINK}}" id="code-link">See the code</a>
-    <a href="{{BLOG_LINK}}" id="blog-link">Read the article</a>
+    <div class="links">
+        {% if CODE_LINK %}<a href="{{CODE_LINK}}" id="code-link"><span></span>See the code</a>{% endif %}
+        {% if BLOG_LINK %}<a href="{{BLOG_LINK}}" id="blog-link"><span></span>Read the article</a>{% endif %}
+    </div>
     {% endblock %}
