@@ -2,13 +2,21 @@
 {% set COMPONENT_NAME = global.components.navigation.name %}
 {% set COMPONENT_DESCRIPTION = global.components.navigation.description %}
 {% set CODE_LINK = "https://github.com/stephenpalgeorge/no-js/tree/main/src/partials/components/navigation" %}
+{% set BLOG_LINK = "https://medium.com/the-code-less-travelled/no-js-navigation-component-9c924a16fc5" %}
 
-{% extends "component.njk" %}
+{% extends "component-page.njk" %}
+    {% import 'components/navigation/navigation.njk' as nav %}
+    {% set menu = [
+        { path: '#', label: 'Home' },
+        { path: '#', label: 'About' },
+        { path: '#', label: 'Contact' }
+    ] %}
+
     {% block styles %}
         <link rel="stylesheet" href="/styles/navigation/navigation.css">
     {% endblock %}
     {% block demo %}
-        {% include 'components/navigation/navigation.njk' %}
+        {{ nav.data('NAVIGATION', menu) }}
         <h2>Lorem Ipsum</h2>
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

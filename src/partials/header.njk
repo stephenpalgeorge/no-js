@@ -1,3 +1,18 @@
 <header>
-
+    <nav>
+        <div class="container">
+            <a href="{{global.mainNav.home.path}}">
+                {{global.mainNav.home.label}}
+            </a>
+            <ul>
+                {% for item in global.mainNav.menu %}
+                <li>
+                    <a href="{{item.path}}" {% if item.external %}target="_blank" rel="nofollow noopener noreferrer"{% endif %}>
+                        {{item.label}}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </nav>
 </header>

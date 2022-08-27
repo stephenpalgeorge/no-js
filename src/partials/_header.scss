@@ -1,0 +1,51 @@
+@use '../styles/variables' as var;
+
+header {
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var.$nav-height;
+    background-color: #FFF;
+    box-shadow: var.$shadow\base;
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+
+      > a {
+        font-weight: 900;
+        text-decoration: none;
+        font-family: var.$font--sans-serif;
+        color: var.$clr--aero;
+        text-shadow:
+          .125rem .125rem 0 var.$clr--ghost-white,
+          -.125rem -.125rem 0 var.$clr--ghost-white,
+          .25rem .25rem 0 var.$clr--love-letter\fade,
+          -.25rem -.25rem 0 var.$clr--love-letter\fade;
+      }
+
+      ul {
+        display: flex;
+        align-items: center;
+
+        li:not(:first-child) {
+          margin-left: var.$size-600;
+        }
+
+        li a {
+          text-transform: capitalize;
+          text-decoration: none;
+          text-underline-offset: .25rem;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}

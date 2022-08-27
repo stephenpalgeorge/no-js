@@ -1,4 +1,4 @@
-{% import "components/pill-set/pill-set.njk" as pillSet %}
+{% import "ui/link-group/link-group.njk" as linkGroup %}
 
 {% set PAGE_TITLE = pages.Index.title %}
 {% set PAGE_DESCRIPTION = pages.Index.description %}
@@ -6,27 +6,29 @@
 
 {% set components = global.components %}
 
-{% extends "main.njk" %}
+{% extends "base-page.njk" %}
     {% block main %}
     <h1 class="large-title">{{ pages.Index.title }}</h1>
     <section>
         <h2 class="subheading">{{ pages.Index.description }}</h2>
-        <p>
+        <p class="intro">
             The No.js philosophy is to leverage the full power of HTML and CSS
             and build as much of the modern web as possible without using JS. This is as much
             out of curiosity as it is out of any philosophical convictions.
         </p>
         <p>
             Browse the examples below my clicking on their name. You can also jump directly to
-            the code by clicking the <code>&lt;/&gt;</code> icon. If you've got any ideas for new
+            the code by clicking the <code>&lt;&gt;</code> icon. If you've got any ideas for new
             components, or suggestions for the current implementations please
             <a href="https://github.com/stephenpalgeorge/no-js/pulls">make a PR</a> or
-            <a href="https://github.com/stephenpalgeorge/no-js/issues">create an issue</a>.
+            <a href="https://github.com/stephenpalgeorge/no-js/issues">create an issue</a>. I'll
+            be adding more components as often as I can, so do check back.
         </p>
     </section>
 
     <section>
-        {{ pillSet.render(components) }}
+        <h2 class="visually-hidden">Components</h2>
+        {{ linkGroup.render(components) }}
     </section>
 
     <section class="dark-theme">

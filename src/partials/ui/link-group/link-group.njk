@@ -1,0 +1,11 @@
+{% import "ui/link-group/link.njk" as link %}
+
+{% macro render(items) %}
+<section class="pill-set">
+    {% for key, data in items %}
+        {% if data.published %}
+        {{ link.render(key, data.url, data.remote) }}
+        {% endif %}
+    {% endfor %}
+</section>
+{% endmacro %}

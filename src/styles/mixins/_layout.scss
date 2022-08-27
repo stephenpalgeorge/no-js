@@ -1,0 +1,11 @@
+@use '../variables' as var;
+
+@mixin content-width() {
+  --space: auto;
+  width: min(100%, 45rem);
+  margin-inline: var(--space);
+  @media screen and (max-width: 49.209rem) {
+    --space: 0;
+    padding-inline: var.$size-900 * .5;
+  }
+}

@@ -14,7 +14,11 @@ gulp.task("markup", () => {
 
 gulp.task("styles", () => {
     return gulp
-        .src(['src/styles/**/*.scss', 'src/partials/components/**/*.scss'])
+        .src([
+            'src/styles/**/*.scss',
+            'src/partials/components/**/*.scss',
+            'src/partials/ui/**/*.scss',
+        ])
         .pipe(sass({outputStyle: 'compressed'}))
         .pipe(gulp.dest('dist/styles'));
 });

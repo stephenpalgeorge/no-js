@@ -1,31 +1,63 @@
 {
   "global": {
+    "mainNav": {
+      "home": {
+        "path": "/",
+        "label": "NO.JS"
+      },
+      "menu": [
+        {
+          "path": "https://github.com/stephenpalgeorge/no-js",
+          "label": "repo",
+          "external": true
+        }, {
+          "path": "/components",
+          "label": "components",
+          "external": false
+        }, {
+          "path": "https://medium.com/the-code-less-travelled/no-js-philosophy-eba8ae9ba400",
+          "label": "blog",
+          "external": true
+        }
+      ]
+    },
     "components": {
       "navigation": {
         "name": "Navigation",
-        "description": "<p class='lead'>A fully responsive Navigation component is an evergreen aspect of any modern UI. The most common pattern seen around the web is that, on smaller screens, the menu is replaced with a hamburger icon, which, when clicked, toggles the navigation menu in/out of view. We can build this with HTML and CSS alone.</p><p>I've applied some basic styling so it's nice to look at, but this is really just demonstrating the pattern, you could be much more creative with how it looks, and probably come up with lots of great ideas that build on this.</p><p>Interact with this demo by clicking the white icon to the right of the nav.</p>",
+        "description": "<p class='intro'>A fully responsive Navigation component is an evergreen aspect of any modern UI. The most common pattern seen around the web is that, on smaller screens, the menu is replaced with a hamburger icon, which, when clicked, toggles the navigation menu in/out of view. We can build this with HTML and CSS alone.</p><p>I've applied some basic styling so it's nice to look at, but this is really just demonstrating the pattern, you could be much more creative with how it looks, and probably come up with lots of great ideas that build on this.</p><p>Interact with this demo by clicking the white icon to the right of the nav.</p>",
         "url": "/components/navigation",
-        "remote": "https://github.com/stephenpalgeorge/no-js"
+        "remote": "https://github.com/stephenpalgeorge/no-js",
+        "published": true
+      },
+      "darkmode": {
+        "name": "Dark mode",
+        "url": "/components/dark-mode",
+        "remote": "https://github.com/stephenpalgeorge/no-js",
+        "published": false
       },
       "tabs": {
         "name": "Tabs",
         "url": "/components/tabs",
-        "remote": "https://github.com/stepenpalgeorge/no-js"
+        "remote": "https://github.com/stepenpalgeorge/no-js",
+        "published": false
       },
       "accordion": {
         "name": "Accordion",
         "url": "/components/accordion",
-        "remote": "https://github.com/stephenpalgeorge/no-js"
+        "remote": "https://github.com/stephenpalgeorge/no-js",
+        "published": false
       },
       "modal": {
         "name": "Modal",
         "url": "/components/modal",
-        "remote": "https://github.com/stephenpalgeorge/no-js"
+        "remote": "https://github.com/stephenpalgeorge/no-js",
+        "published": false
       },
       "lightbox": {
         "name": "Lightbox",
         "url": "/components/lightbox",
-        "remote": "https://github.com/stephenpalgeorge/no-js"
+        "remote": "https://github.com/stephenpalgeorge/no-js",
+        "published": false
       }
     }
   },

@@ -5,7 +5,7 @@
   padding: var.$size-600;
   background-color: #fff;
   border-radius: .125rem;
-  box-shadow: 0 .25rem .5rem .25rem rgba(var.$clr--black-out, .12);
+  box-shadow: var.$shadow\base;
 
   > * + * {
     margin-top: var.$size-600;

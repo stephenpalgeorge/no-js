@@ -1,4 +1,4 @@
-@use '../../../styles/variables' as var;
+@use '../../../styles/variables/index' as var;
 
 .pill {
   display: flex;
@@ -7,6 +7,7 @@
 
   width: max-content;
   padding: var.$size-200 var.$size-400;
+  background: #FFF;
   border: .125rem solid var.$clr--love-letter;
   box-shadow:
     -.25rem -.25rem 0 0 var.$clr--ghost-white,
@@ -31,9 +32,19 @@
       padding-left: var.$size-400;
       border-left: .125rem solid var.$clr--love-letter\fade;
     }
+
+    &:focus {
+      outline: none;
+      font-weight: bold;
+      background: none;
+
+      svg {
+        stroke-width: 4;
+      }
+    }
   }
 
-  &:hover {
+  &:hover, &:focus-within {
     background: linear-gradient(to bottom, lighten(var.$clr--love-letter, 3%), var.$clr--love-letter);
     border-color: var.$clr--love-letter\dark;
     box-shadow:

@@ -1,9 +1,0 @@
-{% import "components/pill-set/pill.njk" as pill %}
-
-{% macro render(items) %}
-<section class="pill-set">
-    {% for key, data in items %}
-        {{ pill.render(key, data.url, data.remote) }}
-    {% endfor %}
-</section>
-{% endmacro %}
