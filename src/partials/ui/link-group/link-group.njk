@@ -1,10 +1,14 @@
 {% import "ui/link-group/link.njk" as link %}
 
-{% macro render(items) %}
-<section class="pill-set">
+{% macro render(items, filter) %}
+<section class="link-group">
     {% for key, data in items %}
-        {% if data.published %}
-        {{ link.render(key, data.url, data.remote) }}
+        {% if filter %}
+            {% if data.published %}
+            {{ link.render({name: key, url: data.url, remote: data.remote}, {active: true}) }}
+            {% endif %}
+        {% else %}
+            {{ link.render({name: key, url: data.url, remote: data.remote}, {active: data.published}) }}
         {% endif %}
     {% endfor %}
 </section>

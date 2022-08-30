@@ -1,18 +1,16 @@
 @use '../../../styles/variables/index' as var;
 
-.pill {
+.link {
+  --link-group-padding: #{var.$size-400} #{var.$size-500};
+
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   width: max-content;
-  padding: var.$size-200 var.$size-400;
+  padding: var(--link-group-padding);
   background: #FFF;
-  border: .125rem solid var.$clr--love-letter;
-  box-shadow:
-    -.25rem -.25rem 0 0 var.$clr--ghost-white,
-    .25rem .25rem 0 0 var.$clr--ghost-white,
-    -.5rem -.5rem 0 0 var.$clr--love-letter\fade;
+  border: .125rem solid var.$clr--black-out\fade;
   transition:
     border-color var.$duration\base var.$timing-function,
     box-shadow var.$duration\base var.$timing-function,
@@ -22,15 +20,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: var.$clr--black-out\fade;
+    text-decoration: none;
+    pointer-events: none;
     cursor: pointer;
     transition:
       color var.$duration\base var.$timing-function,
       border-color var.$duration\base var.$timing-function;
 
-    &.pill-code {
+    &.link-code {
       margin-left: var.$size-400;
       padding-left: var.$size-400;
-      border-left: .125rem solid var.$clr--love-letter\fade;
+      border-left: .125rem solid var.$clr--black-out\fade;
     }
 
     &:focus {
@@ -44,12 +45,12 @@
     }
   }
 
-  &:hover, &:focus-within {
+  &.published:hover, &.published:focus-within {
     background: linear-gradient(to bottom, lighten(var.$clr--love-letter, 3%), var.$clr--love-letter);
     border-color: var.$clr--love-letter\dark;
     box-shadow:
-      -.25rem -.25rem 0 0 var.$clr--ghost-white,
-      .25rem .25rem 0 0 var.$clr--ghost-white,
+      -.25rem -.25rem 0 0 var.$clr--snow,
+      .25rem .25rem 0 0 var.$clr--snow,
       .5rem .5rem 0 0 var.$clr--aero\fade;
 
     a {
@@ -58,5 +59,27 @@
         border-color: var.$clr--love-letter\dark;
       }
     }
+  }
+
+  &.published {
+    border: .125rem solid var.$clr--love-letter;
+    box-shadow:
+      -.25rem -.25rem 0 0 var.$clr--snow,
+      .25rem .25rem 0 0 var.$clr--snow,
+      -.5rem -.5rem 0 0 var.$clr--love-letter\fade;
+
+    a {
+      color: var.$clr--love-letter;
+      text-decoration: underline;
+      pointer-events: auto;
+
+      &.link-code {
+        border-left: .125rem solid var.$clr--love-letter\fade;
+      }
+    }
+  }
+
+  @media screen and (min-width: var.$breakpoint\sm) {
+    --link-group-padding: #{var.$size-200} #{var.$size-400};
   }
 }

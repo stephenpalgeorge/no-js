@@ -1,0 +1,28 @@
+{% import 'ui/link-group/link-group.njk' as linkGroup %}
+
+{% set PAGE_TITLE = pages.Components.title %}
+{% set PAGE_DESCRIPTION = pages.Components.description %}
+{% set PAGE_KEYWORDS = pages.Components.keywords %}
+
+{% set components = global.components %}
+
+{% extends "base-page.njk" %}
+    {% block main %}
+    <h1>{{ pages.Components.title }}</h1>
+    <section>
+        <p class="intro">
+            All of the No.js components are listed below. Click on any of the active links to
+            see the component 'demo' page, where you can see the component in action and find
+            some useful links for further exploration.
+        </p>
+        <p>
+            The disabled (dark-grey) links represent components that haven't been built yet, but should be
+            coming soon.
+        </p>
+    </section>
+
+    <section>
+        <h2 class="visually-hidden">Component list</h2>
+        {{ linkGroup.render(components, false) }}
+    </section>
+    {% endblock %}

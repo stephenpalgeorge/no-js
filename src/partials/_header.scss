@@ -22,18 +22,20 @@ header {
         font-family: var.$font--sans-serif;
         color: var.$clr--aero;
         text-shadow:
-          .125rem .125rem 0 var.$clr--ghost-white,
-          -.125rem -.125rem 0 var.$clr--ghost-white,
+          .125rem .125rem 0 #FFF,
+          -.125rem -.125rem 0 #FFF,
           .25rem .25rem 0 var.$clr--love-letter\fade,
           -.25rem -.25rem 0 var.$clr--love-letter\fade;
       }
 
       ul {
+        --list-gap: #{var.$size-500};
+
         display: flex;
         align-items: center;
 
         li:not(:first-child) {
-          margin-left: var.$size-600;
+          margin-left: var(--list-gap);
         }
 
         li a {
@@ -44,6 +46,10 @@ header {
           &:hover {
             text-decoration: underline;
           }
+        }
+
+        @media screen and (min-width: var.$breakpoint\sm) {
+          --list-gap: #{var.$size-600};
         }
       }
     }

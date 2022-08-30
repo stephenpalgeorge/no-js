@@ -1,6 +1,6 @@
 @use 'link';
 
-.pill-set {
+.link-group {
   $gap: .75rem;
 
   display: flex;
@@ -8,7 +8,7 @@
 
   margin: $gap * -1;
 
-  > .pill {
+  > .link {
     margin: $gap;
   }
 }

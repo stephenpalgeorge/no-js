@@ -1,23 +1,32 @@
 @use './variables' as var;
 
 .links {
+  --icon-display: none;
+  --flex-dir: column;
+  --link-margin: #{var.$size-500} 0 0 0;
+  --link-text: center;
+  --link-padding: #{var.$size-400} #{var.$size-400};
+
   display: flex;
+  flex-direction: var(--flex-dir);
   margin-top: var.$size-700;
 
   a:not(:first-child) {
-    margin-left: var.$size-500;
+    margin: var(--link-margin);
   }
 
   a {
     display: flex;
     align-items: center;
-    padding: var.$size-200 var.$size-400;
+    justify-content: var(--link-text);
+    padding: var(--link-padding);
+    max-width: initial;
     text-decoration: underline;
     border: .125rem solid var.$clr--love-letter;
     border-radius: .125rem;
     box-shadow:
-            -.25rem -.25rem 0 0 var.$clr--ghost-white,
-            .25rem .25rem 0 0 var.$clr--ghost-white,
+            -.25rem -.25rem 0 0 var.$clr--snow,
+            .25rem .25rem 0 0 var.$clr--snow,
             -.5rem -.5rem 0 0 var.$clr--love-letter\fade;
     transition:
             border-color var.$duration\base var.$timing-function,
@@ -27,16 +36,16 @@
 
     &:hover, &:focus {
       background-color: var.$clr--love-letter;
-      color: var.$clr--ghost-white;
+      color: var.$clr--snow;
       border-color: var.$clr--love-letter\dark;
       box-shadow:
-              -.25rem -.25rem 0 0 var.$clr--ghost-white,
-              .25rem .25rem 0 0 var.$clr--ghost-white,
+              -.25rem -.25rem 0 0 var.$clr--snow,
+              .25rem .25rem 0 0 var.$clr--snow,
               .5rem .5rem 0 0 var.$clr--aero\fade;
     }
 
     span {
-      display: inline-block;
+      display: var(--icon-display);
       height: var.$size-400;
       width: var.$size-400;
       margin-right: var.$size-400;
@@ -63,5 +72,13 @@
     &#blog-link:is(:hover, :focus) span {
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23F8F8FD' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z'%3E%3C/path%3E%3C/svg%3E");
     }
+  }
+
+  @media screen and (min-width: var.$breakpoint\sm) {
+    --icon-display: inline-block;
+    --flex-dir: row;
+    --link-margin: 0 0 0 #{var.$size-500};
+    --link-text: left;
+    --link-padding: #{var.$size-200} #{var.$size-400};
   }
 }

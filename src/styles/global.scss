@@ -12,7 +12,7 @@
 }
 
 body {
-  background-color: var.$clr--ghost-white;
+  background-color: var.$clr--snow;
 }
 
 main {
@@ -35,20 +35,30 @@ h4, h5, h6 {
   font-family: var.$font--sans-serif;
   font-weight: 900;
   color: var.$clr--black-out;
+  text-transform: uppercase;
 }
 
 h1 {
   font-size: var.$size-700;
   color: var.$clr--love-letter;
   text-shadow:
-    .25rem .25rem 0 var.$clr--ghost-white,
-    -.25rem -.25rem 0 var.$clr--ghost-white,
-    .5rem .5rem 0 var.$clr--aero\fade,
-    -.5rem -.5rem 0 var.$clr--love-letter\fade,
+    3px 3px 0 var.$clr--snow,
+    -3px -3px 0 var.$clr--snow,
+    6px 6px 0 var.$clr--aero\fade,
+    -6px -6px 0 var.$clr--love-letter\fade,
     1rem 1rem 1.75rem rgba(var.$clr--love-letter, .4),
     -1rem -1rem 1.75rem rgba(var.$clr--aero, .4);
+
   &.large-title {
     font-size: var.$size-900;
+    text-transform: none;
+    text-shadow:
+      .25rem .25rem 0 var.$clr--snow,
+      -.25rem -.25rem 0 var.$clr--snow,
+      .5rem .5rem 0 var.$clr--aero\fade,
+      -.5rem -.5rem 0 var.$clr--love-letter\fade,
+      1rem 1rem 1.75rem rgba(var.$clr--love-letter, .4),
+      -1rem -1rem 1.75rem rgba(var.$clr--aero, .4);
     + * {
       margin-top: var.$size-900;
     }
@@ -118,7 +128,7 @@ ul {
 section.dark-theme {
   padding: var.$size-600;
   background-color: var.$clr--black-out;
-  color: var.$clr--ghost-white;
+  color: var.$clr--snow;
   * {
     color: currentColor;
   }

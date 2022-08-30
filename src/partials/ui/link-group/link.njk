@@ -1,10 +1,10 @@
-{% macro render(name, url, remote) %}
-<div class="pill">
-    <a href="{{url}}" class="pill-name">
-        {{ name }}
+{% macro render(data, options) %}
+<div class="link {{ 'published' if options.active }}">
+    <a href="{{data.url}}" class="link-name">
+        {{ data.name }}
     </a>
 
-    <a href="{{remote}}" class="pill-code" target="_blank" rel="nofollow noopener noreferrer">
+    <a href="{{data.remote}}" class="link-code" target="_blank" rel="nofollow noopener noreferrer">
         {% include 'icons/code-icon.njk' %}
     </a>
 </div>
