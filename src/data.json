@@ -27,13 +27,15 @@
         "description": "<p class='intro'>A fully responsive Navigation component is an evergreen aspect of any modern UI. The most common pattern seen around the web is that, on smaller screens, the menu is replaced with a hamburger icon, which, when clicked, toggles the navigation menu in/out of view. We can build this with HTML and CSS alone.</p><p>I've applied some basic styling so it's nice to look at, but this is really just demonstrating the pattern, you could be much more creative with how it looks, and probably come up with lots of great ideas that build on this.</p><p>Interact with this demo by clicking the white icon to the right of the nav.</p>",
         "url": "/components/navigation",
         "remote": "https://github.com/stephenpalgeorge/no-js/tree/main/src/partials/components/navigation",
+        "blog": "https://medium.com/the-code-less-travelled/no-js-navigation-component-9c924a16fc5",
         "published": true
       },
       "darkmode": {
         "name": "Dark mode",
         "description": "<p class='intro'>Toggling between a light and dark mode on your website/app allows your users to choose a style of presentation for your content that is easiest on their eyes. There are many different ways that the UI could be structured, for our demo we use a simple checkbox. Everything in this dark-mode implementation is done with CSS and relies on the power of some awesome modern features.</p><p class='lead'>Warning! Browser support for ':has()' is still fairly low (<a href='https://caniuse.com/css-has' target='_blank' rel='noopener nofollow noreferrer'>check here</a>). To see this demo working, you'll need to check that you're on a supported browser version, and update if not.</p>",
         "url": "/components/dark-mode",
-        "remote": "https://github.com/stephenpalgeorge/no-js",
+        "remote": "https://github.com/stephenpalgeorge/no-js/tree/main/src/partials/components/darkmode",
+        "blog": "https://medium.com/the-code-less-travelled/no-js-dark-mode-77ec88a1a534",
         "published": true
       },
       "tooltip": {

@@ -3,8 +3,8 @@
 {% set COMPONENT_NAME = global.components.navigation.name %}
 {% set COMPONENT_DESCRIPTION = global.components.navigation.description %}
 {% set PAGE_DESCRIPTION = COMPONENT_DESCRIPTION | striptags %}
-{% set CODE_LINK = "https://github.com/stephenpalgeorge/no-js/tree/main/src/partials/components/navigation" %}
-{% set BLOG_LINK = "https://medium.com/the-code-less-travelled/no-js-navigation-component-9c924a16fc5" %}
+{% set CODE_LINK = global.components.navigation.remote %}
+{% set BLOG_LINK = global.components.navigation.blog %}
 
 {% extends "component-page.njk" %}
     {% import 'components/navigation/navigation.njk' as nav %}
