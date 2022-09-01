@@ -40,24 +40,25 @@ h4, h5, h6 {
 
 h1 {
   font-size: var.$size-700;
-  color: var.$clr--love-letter;
+  color: var.$clr--black-out;
   text-shadow:
-    3px 3px 0 var.$clr--snow,
-    -3px -3px 0 var.$clr--snow,
-    6px 6px 0 var.$clr--aero\fade,
-    -6px -6px 0 var.$clr--love-letter\fade,
-    1rem 1rem 1.75rem rgba(var.$clr--love-letter, .4),
+    2px 2px 0 var.$clr--snow,
+    //-3px -3px 0 var.$clr--snow,
+    5px 5px 0 var.$clr--aero\fade,
+    //-6px -6px 0 var.$clr--love-letter\fade,
+    //1rem 1rem 1.75rem rgba(var.$clr--love-letter, .4),
     -1rem -1rem 1.75rem rgba(var.$clr--aero, .4);
 
   &.large-title {
     font-size: var.$size-900;
-    text-transform: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
     text-shadow:
-      .25rem .25rem 0 var.$clr--snow,
-      -.25rem -.25rem 0 var.$clr--snow,
-      .5rem .5rem 0 var.$clr--aero\fade,
-      -.5rem -.5rem 0 var.$clr--love-letter\fade,
-      1rem 1rem 1.75rem rgba(var.$clr--love-letter, .4),
+      3px 3px 0 var.$clr--snow,
+      //-.25rem -.25rem 0 var.$clr--snow,
+      6px 6px 0 var.$clr--aero\fade,
+      //-.5rem -.5rem 0 var.$clr--love-letter\fade,
+      //1rem 1rem 1.75rem rgba(var.$clr--love-letter, .4),
       -1rem -1rem 1.75rem rgba(var.$clr--aero, .4);
     + * {
       margin-top: var.$size-900;

@@ -8,6 +8,7 @@ const postcss = require('gulp-postcss');
 const mode = require('gulp-mode')();
 const autoprefixer = require('autoprefixer');
 const browsersync = require('browser-sync').create();
+const surge = require('gulp-surge');
 
 function assets() {
     return gulp
@@ -56,7 +57,16 @@ function serve() {
     gulp.watch(['src/**/*.html', 'src/**/*.njk'], gulp.series(markup, reload));
 }
 
+function deploy() {
+    return surge({
+        project: './dist',
+        domain: 'nojs-ui.surge.sh',
+    });
+}
+
 // npm run dev
 exports.dev = gulp.series(assets, markup, styles, serve);
 // npm start
 exports.default = gulp.series(assets, markup, styles);
+// npm run deploy
+exports.release = gulp.series(assets, markup, styles, deploy);

@@ -21,11 +21,6 @@ header {
         text-decoration: none;
         font-family: var.$font--sans-serif;
         color: var.$clr--aero;
-        text-shadow:
-          .125rem .125rem 0 #FFF,
-          -.125rem -.125rem 0 #FFF,
-          .25rem .25rem 0 var.$clr--love-letter\fade,
-          -.25rem -.25rem 0 var.$clr--love-letter\fade;
       }
 
       ul {
