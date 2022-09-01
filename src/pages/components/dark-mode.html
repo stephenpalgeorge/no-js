@@ -1,0 +1,24 @@
+{% set PAGE_TITLE = "Dark Mode" %}
+{% set PAGE_KEYWORDS = "javascript, html, css, component, components, ui, front end development, darkmode, dark-mode" %}
+{% set COMPONENT_NAME = global.components.darkmode.name %}
+{% set COMPONENT_DESCRIPTION = global.components.darkmode.description %}
+{% set PAGE_DESCRIPTION = COMPONENT_DESCRIPTION | striptags %}
+{% set CODE_LINK = "https://github.com/stephenpalgeorge/no-js/tree/main/src/partials/components/navigation" %}
+{% set BLOG_LINK = "https://medium.com/the-code-less-travelled/no-js-navigation-component-9c924a16fc5" %}
+
+{% extends "component-page.njk" %}
+{% block styles %}
+    <link rel="stylesheet" href="/styles/darkmode/darkmode.css">
+{% endblock %}
+{% block demo %}
+    {% include 'components/darkmode/darkmode.njk' %}
+    <h2>Dark/Light Theme</h2>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+        enim ad minim veniam, quis nostrud exercitation ullamco laboris
+        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+        in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+        nulla pariatur.
+    </p>
+{% endblock %}

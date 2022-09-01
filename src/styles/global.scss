@@ -125,6 +125,10 @@ ul {
   }
 }
 
+input, textarea, select, label {
+  font-family: var.$font--monospace;
+}
+
 section.dark-theme {
   padding: var.$size-600;
   background-color: var.$clr--black-out;

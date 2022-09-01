@@ -1,0 +1,121 @@
+@use '../../../styles/variables' as var;
+
+.component-demo {
+  --bg: #fff;
+  --text-clr: #{var.$clr--black-out};
+
+  background-color: var(--bg, #fff);
+  transition: background-color .1s linear;
+  h2, p, label {
+    color: var(--text-clr, #222);
+    transition: color .1s linear;
+  }
+
+  &:has(input[type="checkbox"]:checked) {
+    --bg: #{var.$clr--black-out};
+    --text-clr: #fff;
+
+    img {
+      filter: invert(1);
+    }
+  }
+}
+
+
+.dark-mode-control {
+  display: flex;
+  align-items: center;
+
+  label {
+    $checkbox-size: 1.5rem;
+
+    position: relative;
+    padding-left: $checkbox-size * 1.5;
+
+    #on {
+      display: inline;
+    }
+
+    #off {
+      display: none;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      height: $checkbox-size;
+      width: $checkbox-size;
+      border: .125rem solid var.$clr--love-letter;
+      transition: background-color .1s linear;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: $checkbox-size * .5;
+      transform: translate(-50%, -58%) rotate(35deg);
+      width: $checkbox-size * .3;
+      height: $checkbox-size * .6;
+      border: solid #fff;
+      border-width: 0 .125rem .125rem 0;
+    }
+  }
+
+  input[type="checkbox"] {
+    display: none;
+
+    &:checked + label {
+      &::before {
+        background-color: var.$clr--love-letter;
+      }
+
+      #on {
+        display: none;
+      }
+
+      #off {
+        display: inline;
+      }
+    }
+  }
+
+  img {
+    $icon-size: 1.5rem;
+
+    width: $icon-size;
+    height: auto;
+    filter: invert(0);
+    transition: opacity .1s linear, filter .1s linear;
+
+    &[src*="moon"] {
+      width: $icon-size * .6;
+      opacity: .3;
+    }
+
+    &[src*="sun"] {
+      opacity: 1;
+    }
+
+    &:first-of-type {
+      margin-left: auto;
+    }
+
+    &:not(:first-of-type) {
+      margin-left: $icon-size;
+    }
+  }
+
+  input:checked {
+    ~ img[src*="moon"] {
+      opacity: 1 !important;
+    }
+
+    ~ img[src*="sun"] {
+      opacity: .3 !important;
+    }
+  }
+}

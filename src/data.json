@@ -31,9 +31,10 @@
       },
       "darkmode": {
         "name": "Dark mode",
+        "description": "<p class='intro'>Toggling between a light and dark mode on your website/app allows your users to choose a style of presentation for your content that is easiest on their eyes. There are many different ways that the UI could be structured, for our demo we use a simple checkbox. Everything in this dark-mode implementation is done with CSS and relies on the power of some awesome modern features.</p><p class='lead'>Warning! Browser support for ':has()' is still fairly low (<a href='https://caniuse.com/css-has' target='_blank' rel='noopener nofollow noreferrer'>check here</a>). To see this demo working, you'll need to check that you're on a supported browser version, and update if not.</p>",
         "url": "/components/dark-mode",
         "remote": "https://github.com/stephenpalgeorge/no-js",
-        "published": false
+        "published": true
       },
       "tooltip": {
         "name": "Tooltip",
